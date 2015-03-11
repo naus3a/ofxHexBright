@@ -1,0 +1,5 @@
+ofxHexBright
+============
+
+An OpenFrameworks addon to control a HexBright ( http://www.hexbright.com/ ) flashlight via USB. 
+Obviously the flashlight needs an Arduino sketch implementing the same serial procotol.
