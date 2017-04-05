@@ -37,6 +37,8 @@ class testApp : public ofBaseApp{
     ofxUILabelButton * butFlash;
     ofxUILabelToggle * togPorts;
     ofxUILabel * labConnect;
+    ofxUILabelButton * butOn;
+    ofxUILabelButton * butOff;
     
     ofxUICanvas * guiPorts;
     

@@ -28,7 +28,7 @@ void testApp::setup(){
     sliBright = new ofxUISlider("brightness", 0, 1, &hb.brightness, 100,10);
     gui->addWidgetDown(sliBright);
     
-    nuTime = new ofxUINumberDialer(1,10,&hb.time,0,"seconds",OFX_UI_FONT_MEDIUM);
+    nuTime = new ofxUINumberDialer(0,10,&hb.time,0,"seconds",OFX_UI_FONT_MEDIUM);
     gui->addWidgetRight(nuTime);
     
     butFadeIn = new ofxUILabelButton("Fade IN",false);
@@ -38,6 +38,11 @@ void testApp::setup(){
     
     butFlash = new ofxUILabelButton("FLASH",false);
     gui->addWidgetDown(butFlash);
+    
+    butOn = new ofxUILabelButton("ON", false);
+    butOff = new ofxUILabelButton("OFF",false);
+    gui->addWidgetRight(butOn);
+    gui->addWidgetRight(butOff);
     
     ofAddListener(gui->newGUIEvent, this, &testApp::guiEvent);
     
@@ -64,6 +69,14 @@ void testApp::guiEvent(ofxUIEventArgs &e){
         }
     }else if(e.widget==togPorts){
         setPortsGUI(togPorts->getValue());
+    }else if(e.widget==butOn){
+        if(butOn->getValue()){
+            hb.turnOn();
+        }
+    }else if(e.widget==butOff){
+        if(butOff->getValue()){
+            hb.turnOff();
+        }
     }
 }
 
